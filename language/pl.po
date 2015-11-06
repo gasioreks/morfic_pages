@@ -1,0 +1,142 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: webtrees\n"
+"Report-Msgid-Bugs-To: i18n@webtrees.net\n"
+"POT-Creation-Date: 2011-12-12 10:24+0000\n"
+"PO-Revision-Date: 2011-12-12 11:58+0000\n"
+"Last-Translator: wooc <Unknown>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2011-12-12 16:04+0000\n"
+"X-Generator: Launchpad (build 14458)\n"
+"Language: \n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: translate;noop;plural:1,2\n"
+
+#: Custom pages
+msgid "Wooc Pages"
+msgstr "Wooc Własne strony"
+
+msgid "Custom pages"
+msgstr "Własne strony"
+
+msgid "Display pages prepared by user."
+msgstr "Wyświetla strony przygotowane przez użytkownika."
+
+msgid "Custom page description"
+msgstr "Opis własnej strony"
+
+msgid "Edit pages"
+msgstr "Edytuj strony"
+
+msgid "Custom page title"
+msgstr "Tytuł własnej strony"
+
+msgid "Custom page address"
+msgstr "Adres własnej strony"
+
+msgid "Custom page icon"
+msgstr "Ikona własnej strony"
+
+msgid "Add page"
+msgstr "Dodaj stronę"
+
+msgid "Using this option you can add contents for each page within this resource."
+msgstr "Za pomocą tej opcji można dodać zawartość każdej strony wraz ze źródłem."
+
+msgid "The pages is empty."
+msgstr "Strony są puste."
+
+msgid "Edit page"
+msgstr "Edytuj stronę"
+
+msgid "This option will let you edit a page."
+msgstr "Ta opcja umożliwia edycję strony."
+
+msgid "Add your page title here"
+msgstr "Dodaj tytuł strony"
+
+msgid "Add your page description here. This description is placed on the top of page."
+msgstr "Dodaj opis strony. Dany opis będzie umieszczony w górnej części strony."
+
+msgid "Page address"
+msgstr "Adres strony"
+
+msgid "Add your page address here"
+msgstr "Dodaj adres strony"
+
+msgid "Page icon"
+msgstr "Ikona strony"
+
+msgid "Show this page for which languages?"
+msgstr "Pokaż tę stronę dla następujących języków"
+
+msgid "Page position"
+msgstr "Pozycja strony"
+
+msgid "This field controls the order in which the pages are displayed."
+msgstr "To pole określa kolejność, w jakiej zostaną wyświetlone strony."
+
+msgid "You do not have to enter the numbers sequentially. If you leave holes in the numbering scheme, you can insert other pages later. For example, if you use the numbers 1, 6, 11, 16, you can later insert pages with the missing sequence numbers. Negative numbers and zero are allowed, and can be used to insert menu items in front of the first one."
+msgstr "Nie trzeba wprowadzać kolejnych numerów. Jeśli zostaną pozostawione przerwy w numeracji, będzie można później wstawić w nie inne strony. Na przykład jeśli zostaną użyte numery 1, 6, 11, 16, można będzie poźniej wstawić strony o brakujących numerach. Dozwolone są także wartości ujemne i zero, przydatne przy wstawianiu elementów na samym początku."
+
+msgid "When more than one page has the same position number, only one of these pages will be visible."
+msgstr "Jeśli więcej niż jedna strona ma ten sam numer pozycji, tylko jedna z nich będzie widoczna."
+
+msgid "Page visibility"
+msgstr "Widoczność strony"
+
+msgid "You can determine whether this page will be visible regardless of family tree, or whether it will be visible only to the current family tree."
+msgstr "Można określić, aby dana strona była widoczna niezależnie od drzewa genealogicznego lub widoczna tylko dla bieżącego drzewa genealogicznego."
+
+msgid "The page will always appear, regardless of family tree."
+msgstr "Strona pojawi się niezależnie od drzewa genealogicznego."
+
+msgid "The page will appear only in the currently active family tree."
+msgstr "Strona pojawi się tylko w bieżącym drzewie genealogicznym."
+
+msgid "Delete page"
+msgstr "Usuń stronę"
+
+msgid "This option will let you delete a page."
+msgstr "Ta opcja umożliwia usunięcie strony."
+
+msgid "Are you sure you want to delete this page?"
+msgstr "Usunąć daną stronę?"
+
+msgid "Move page down"
+msgstr "Przesuń stronę w dół"
+
+msgid "This option will let you move a page downwards."
+msgstr "Ta opcja umożliwia przesunięcie strony w dół."
+
+msgid "Each time you use this option, the position number of this page is increased by one. You can achieve the same effect by editing the page and changing the page position field."
+msgstr "Za każdym razem, kiedy zostanie użyta ta opcja, numer pozycji danej strony zwiększy się o jeden. Można osiągnąć ten sam efekt edytując daną stronę i zmieniając jej pole pozycji."
+
+msgid "Move page up"
+msgstr "Przesuń stronę do góry"
+
+msgid "This option will let you move a page upwards."
+msgstr "Ta opcja umożliwia przesunięcie strony w górę."
+
+msgid "Each time you use this option, the position number of this page is reduced by one. You can achieve the same effect by editing the page and changing the page position field."
+msgstr "Za każdym razem, kiedy zostanie użyta ta opcja, numer pozycji danej strony zmniejszy się o jeden. Można osiągnąć ten sam efekt edytując daną stronę i zmieniając jej pole pozycji."
+
+msgid "The following pages are a general set of information that I find useful, informative, or just fun."
+msgstr "Poniższe strony są ogólnym zbiorem informacji, które uważam za użyteczne, informacyjne, czy po prostu zabawne."
+
+msgid "Resource pages"
+msgstr "Zasoby"
+
+msgid "Position"
+msgstr "Pozycja"
+
+msgid "Controls"
+msgstr "Dostosuj"
