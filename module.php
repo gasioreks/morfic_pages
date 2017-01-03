@@ -121,12 +121,23 @@ class MorficPagesModule extends AbstractModule implements ModuleBlockInterface, 
 		//-- main pages menu item
 		$menu = new Menu(I18N::translate($main_menu_title), 'module.php?mod=' . $this->getName() . '&amp;mod_action=show&amp;pages_id=' . $default_block, $this->getName());
 		$menu->addClass('menuitem', 'menuitem_hover', '');
+		$already_added = [];
 		foreach ($this->getMenupagesList() as $items) {
 			$languages = $this->getBlockSetting($items->block_id, 'languages');
 			if ((!$languages || in_array(WT_LOCALE, explode(',', $languages))) && $items->pages_access >= Auth::accessLevel($WT_TREE)) {
-				$path = 'module.php?mod=' . $this->getName() . '&amp;mod_action=show&amp;pages_id=' . $items->block_id;
-				$submenu = new Menu(I18N::translate($items->pages_title), $path, $this->getName() . '-' . $items->block_id);
-				$menu->addSubmenu($submenu);
+				if (strpos($items->pages_title, "#") !== FALSE) {
+					$splitted = explode("#", $items->pages_title);
+					if (array_search($splitted[0], $already_added) === FALSE) {
+						$already_added[] = $splitted[0];
+						$path = 'module.php?mod=' . $this->getName() . '&amp;mod_action=show&amp;pages_id=' . $items->block_id;
+						$submenu = new Menu(I18N::translate($splitted[0]), $path, $this->getName() . '-' . $items->block_id);
+						$menu->addSubmenu($submenu);
+					}
+				} else {
+					$path = 'module.php?mod=' . $this->getName() . '&amp;mod_action=show&amp;pages_id=' . $items->block_id;
+					$submenu = new Menu(I18N::translate($items->pages_title), $path, $this->getName() . '-' . $items->block_id);
+					$menu->addSubmenu($submenu);
+				}
 			}
 		}
 		if (Auth::isAdmin()) {
@@ -481,7 +492,21 @@ class MorficPagesModule extends AbstractModule implements ModuleBlockInterface, 
 		global $controller, $WT_TREE;
 		$items_id = Filter::get('pages_id');
 		$controller = new PageController();
-		$controller->setPageTitle(I18N::translate(I18N::translate($this->getSetting('MP_PAGE_TITL', I18N::translate('Custom pages')))))
+		$items_list = $this->getPagesList();
+
+		$multi_level = FALSE;
+		foreach ($items_list as $items) {
+			if ($items_id==$items->block_id) {
+				$multi_level = strpos($items->pages_title, "#");
+				if ($multi_level !== FALSE) {
+					$splitted = explode("#", $items->pages_title);
+					$title = $splitted[0]; 
+				} else 
+					$title = $items->pages_title; 
+			}
+		}
+
+		$controller->setPageTitle(I18N::translate(I18N::translate($this->getSetting('MP_PAGE_TITL', I18N::translate($title)))))
 			->pageHeader();
 		// HTML common to all pages
 		$html = '<div id="pages-container">' . 
@@ -491,13 +516,21 @@ class MorficPagesModule extends AbstractModule implements ModuleBlockInterface, 
  				'<div style="clear:both;"></div>' .
 				'<div id="pages_tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">' .
 				'<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">';
-		$items_list = $this->getPagesList();
 		foreach ($items_list as $items) {
+			$title_to_display = $items->pages_title;
+			if ($multi_level !== FALSE) {
+				$splitted = explode("#", $items->pages_title);
+				if ($title != $splitted[0]) {
+					continue;
+				} else
+					$title_to_display = $splitted[1];
+			} else continue;
+
 			$languages = $this->getBlockSetting($items->block_id, 'languages');
 			if ((!$languages || in_array(WT_LOCALE, explode(',', $languages))) && $items->pages_access >= Auth::accessLevel($WT_TREE)) {
 				$html .= '<li class="ui-state-default ui-corner-top' . ($items_id==$items->block_id ? ' ui-tabs-selected ui-state-active' : '') . '">' .
-					'<a href="module.php?mod=' . $this->getName() . '&amp;mod_action=show&amp;pages_id=' . $items->block_id . '">' .
-					'<span title="' . str_replace("{@PERC@}", "%", I18N::translate(str_replace("%", "{@PERC@}", $items->pages_title))) . '">' . str_replace("{@PERC@}", "%", I18N::translate(str_replace("%", "{@PERC@}", $items->pages_title))) . '</span></a></li>';
+					'<a href="module.php?mod=' . $this->getName() . '&amp;mod_action=show&amp;pages_id=' . $items->block_id . '" class="ui-tabs-anchor">' .
+					'<span title="' . str_replace("{@PERC@}", "%", I18N::translate(str_replace("%", "{@PERC@}", $title_to_display))) . '">' . str_replace("{@PERC@}", "%", I18N::translate(str_replace("%", "{@PERC@}", $title_to_display))) . '</span></a></li>';
 			}
 		}
 		$html .= '</ul>';
