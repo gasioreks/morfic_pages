@@ -2,7 +2,8 @@
 // webtrees - Custom pages module
 //
 // webtrees: Web based Family History software
-// Copyright (C) 2015 £ukasz WileÒski.
+// Copyright (C) 2015 ≈Åukasz Wile≈Ñski.
+// Copyright (C) 2017 Sebastian GƒÖsiorek
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -19,7 +20,7 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-namespace Wooc\WebtreesAddons\WoocPagesModule;
+namespace Morfic\WebtreesAddons\MorficPagesModule;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Controller\PageController;
 use Fisharebest\Webtrees\Database;
@@ -35,19 +36,19 @@ use Fisharebest\Webtrees\Module\ModuleMenuInterface;
 use Fisharebest\Webtrees\Theme;
 use Fisharebest\Webtrees\Tree;
 
-class WoocPagesModule extends AbstractModule implements ModuleBlockInterface, ModuleConfigInterface, ModuleMenuInterface {
+class MorficPagesModule extends AbstractModule implements ModuleBlockInterface, ModuleConfigInterface, ModuleMenuInterface {
 
 	public function __construct() {
-		parent::__construct('wooc_pages');
+		parent::__construct('morfic_pages');
 	}
 
 	// Extend class Module
 	public function getTitle() {
-		return I18N::translate('Wooc Pages');
+		return I18N::translate('Morfic Pages');
 	}
 
 	public function getMenuTitle() {
-		return I18N::translate('Resources');
+		return I18N::translate('Pages');
 	}
 
 	// Extend class Module
@@ -644,69 +645,6 @@ class WoocPagesModule extends AbstractModule implements ModuleBlockInterface, Mo
 			<li class="active"><?php echo $controller->getPageTitle(); ?></li>
 		</ol>
 		<div class="row">
-			<div class="col-sm-12 text-right text-left-xs col-xs-12">		
-				<?php // TODO: Move to internal item/page
-				if (file_exists(WT_MODULES_DIR . $this->getName() . '/readme.html')) { ?>
-					<a href="<?php echo WT_MODULES_DIR . $this->getName(); ?>/readme.html" class="btn btn-info">
-						<i class="fa fa-newspaper-o"></i>
-						<?php echo I18N::translate('ReadMe'); ?>
-					</a>
-				<?php } ?>
-			</div>
-		</div>
-		<div class="row">
-			<form method="post" name="configform" action="module.php?mod=<?php echo  $this->getName(); ?>&amp;mod_action=admin_config" class="form">
-			<input type="hidden" name="action" value="update">
-				<div class="form-group">
-					<label class="control-label col-sm-3" for="NEW_MP_PAGE_TITL">
-						<?php echo I18N::translate('Custom page title'); ?>
-					</label>
-					<div class="col-sm-9">
-						<input
-							class="form-control"
-							id="NEW_MP_PAGE_TITL"
-							size="90"
-							name="NEW_MP_PAGE_TITL"
-							required
-							type="text"
-							value="<?php echo Filter::escapeHtml(I18N::translate($MP_PAGE_TITL)); ?>">
-					</div>
-					<span class="help-block col-sm-9 col-sm-offset-3 small text-muted">
-						<?php echo I18N::translate('Add your menu title here'); ?>
-					</span>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-3" for="NEW_MP_PAGE_DESC">
-						<?php echo I18N::translate('Custom page description'); ?>
-					</label>
-					<div class="col-sm-9">
-						<textarea
-							class="form-control"
-							id="NEW_MP_PAGE_DESC"
-							size="90"
-							rows="4"
-							name="NEW_MP_PAGE_DESC"
-							type="text"
-						><?php echo Filter::escapeHtml(I18N::translate($MP_PAGE_DESC)); ?></textarea>
-					</div>
-					<span class="help-block col-sm-9 col-sm-offset-3 small text-muted">
-						<?php echo I18N::translate('Add your page description here. This description is placed on the top of page.'); ?>
-					</span>
-				</div>
-				<div class="row col-sm-9 col-sm-offset-3">
-					<button class="btn btn-primary" type="submit">
-						<i class="fa fa-check"></i>
-						<?php echo I18N::translate('save'); ?>
-					</button>
-					<button class="btn btn-primary" type="reset" onclick="window.location='<?php echo $this->getConfigLink(); ?>';">
-						<i class="fa fa-recycle"></i>
-						<?php echo I18N::translate('Reset'); ?>
-					</button>
-				</div>
-			</form>
-		</div>
-		<hr>
-		<div class="row">
 			<div class="col-sm-4 col-xs-12">
 				<form class="form">
 					<label for="ged" class="sr-only">
@@ -837,4 +775,4 @@ class WoocPagesModule extends AbstractModule implements ModuleBlockInterface, Mo
 		)->execute($args)->fetchAll();
 	}
 }
-return new WoocPagesModule;
+return new MorficPagesModule;

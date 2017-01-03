@@ -3,6 +3,7 @@
 //
 // webtrees: Web based Family History software
 // Copyright (C) 2011 webtrees development team.
+// Copyright (C) 2017 Sebastian Gąsiorek
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -21,15 +22,15 @@
 */
 
 /* Main menu icon */
-#primary-menu-nav .primary-menu > li.wooc_pages,
-#primary-menu-nav .primary-menu > li.open.wooc_pages {
+#primary-menu-nav .primary-menu > li.morfic_pages,
+#primary-menu-nav .primary-menu > li.open.morfic_pages {
 	background:url(pages.png) no-repeat 50% 25%;
 	background-size:40px;
 }
-li.wooc_pages ul li {background:url(pages-small.png) no-repeat left 0}
-html[dir=rtl] li.wooc_pages ul li {background-position:right 0}
-li.wooc_pages ul li.wooc_pages-edit {background:url(submenu_edit.png) no-repeat left 0}
-html[dir=rtl] .wooc_pages ul li.wooc_pages-edit {background-position:right 0}
+li.morfic_pages ul li {background:url(pages-small.png) no-repeat left 0}
+html[dir=rtl] li.morfic_pages ul li {background-position:right 0}
+li.morfic_pages ul li.morfic_pages-edit {background:url(submenu_edit.png) no-repeat left 0}
+html[dir=rtl] .morfic_pages ul li.morfic_pages-edit {background-position:right 0}
 #pages_config {text-align:left;}
 html[dir='rtl'] #pages_config {direction:rtl; text-align:right;}
 #pages_config th, #pages_config td {vertical-align:top;}
@@ -39,7 +40,7 @@ html[dir='rtl'] #page-create {float:right;}
 
 /* Mobile low resolution viewport */
 @media (max-width: 600px) {
-	li.wooc_pages {background:url(pages-mobile.png) no-repeat 50% 50%}
+	li.morfic_pages {background:url(pages-mobile.png) no-repeat 50% 50%}
 }
 
 /* Page styles */
