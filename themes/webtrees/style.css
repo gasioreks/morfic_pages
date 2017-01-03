@@ -1,5 +1,5 @@
 /*
-// Style for wooc_pages module
+// Style for morfic_pages module
 //
 // webtrees: Web based Family History software
 // Copyright (C) 2015 webtrees development team.
@@ -21,11 +21,11 @@
 */
 
 /* Main menu icon */
-li.wooc_pages {background:url(pages.png) no-repeat 50% 50%}
-li.wooc_pages ul li {background:url(pages-small.png) no-repeat left 0}
-html[dir=rtl] li.wooc_pages ul li {background-position:right 0}
-li.wooc_pages ul li.wooc_pages-edit {background:url(submenu_edit.png) no-repeat left 0}
-html[dir=rtl] .wooc_pages ul li.wooc_pages-edit {background-position:right 0}
+li.morfic_pages {background:url(pages.png) no-repeat 50% 25%}
+li.morfic_pages ul li {background:url(pages-small.png) no-repeat left 0}
+html[dir=rtl] li.morfic_pages ul li {background-position:right 0}
+li.morfic_pages ul li.morfic_pages-edit {background:url(submenu_edit.png) no-repeat left 0}
+html[dir=rtl] .morfic_pages ul li.morfic_pages-edit {background-position:right 0}
 #pages_config {text-align:left;}
 html[dir='rtl'] #pages_config {direction:rtl; text-align:right;}
 #pages_config th, #pages_config td {vertical-align:top;}
@@ -35,7 +35,7 @@ html[dir='rtl'] #page-create {float:right;}
 
 /* Mobile low resolution viewport */
 @media (max-width: 600px) {
-	li.wooc_pages {background:url(pages-mobile.png) no-repeat 50% 50%}
+	li.morfic_pages {background:url(pages-mobile.png) no-repeat 50% 50%}
 }
 
 /* Page styles */
