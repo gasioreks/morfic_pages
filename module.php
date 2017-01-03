@@ -528,7 +528,7 @@ class MorficPagesModule extends AbstractModule implements ModuleBlockInterface, 
 
 			$languages = $this->getBlockSetting($items->block_id, 'languages');
 			if ((!$languages || in_array(WT_LOCALE, explode(',', $languages))) && $items->pages_access >= Auth::accessLevel($WT_TREE)) {
-				$html .= '<li class="ui-state-default ui-corner-top' . ($items_id==$items->block_id ? ' ui-tabs-selected ui-state-active' : '') . '">' .
+				$html .= '<li class="ui-state-default ui-corner-top' . ($items_id==$items->block_id ? ' ui-tabs-active ui-state-active' : '') . '">' .
 					'<a href="module.php?mod=' . $this->getName() . '&amp;mod_action=show&amp;pages_id=' . $items->block_id . '" class="ui-tabs-anchor">' .
 					'<span title="' . str_replace("{@PERC@}", "%", I18N::translate(str_replace("%", "{@PERC@}", $title_to_display))) . '">' . str_replace("{@PERC@}", "%", I18N::translate(str_replace("%", "{@PERC@}", $title_to_display))) . '</span></a></li>';
 			}
